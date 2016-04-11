@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".AtvLuyenThi">
+    tools:context=".activity.AtvLuyenThi">
 
     <TextView
         android:layout_width="wrap_content"

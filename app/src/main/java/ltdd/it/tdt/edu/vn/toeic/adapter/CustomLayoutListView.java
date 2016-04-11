@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import ltdd.it.tdt.edu.vn.toeic.AtvListDeThi;
+import ltdd.it.tdt.edu.vn.toeic.activity.AtvListDeThi;
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.object.Item;
 

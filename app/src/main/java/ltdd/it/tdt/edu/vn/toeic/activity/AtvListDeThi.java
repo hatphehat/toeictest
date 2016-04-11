@@ -1,4 +1,4 @@
-package ltdd.it.tdt.edu.vn.toeic;
+package ltdd.it.tdt.edu.vn.toeic.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 
+import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.adapter.CustomLayoutGridDeThi;
 import ltdd.it.tdt.edu.vn.toeic.object.DeThi;
 
