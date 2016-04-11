@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".AtvLuyenThi">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phần Nghe" />
+
+   <ListView
+       android:id="@+id/lstListen"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></ListView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phần Đọc" />
+
+   <ListView
+       android:id="@+id/lstRead"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"></ListView>
+
+
+</LinearLayout>
