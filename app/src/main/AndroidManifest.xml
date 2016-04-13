@@ -20,7 +20,9 @@
             android:name=".activity.AtvLuyenThi"
             android:label="@string/title_activity_de_thi" />
         <activity android:name=".activity.AtvListDeThi" />
-        <activity android:name=".activity.AvtPhotos"></activity>
+        <activity android:name=".activity.AvtPhotos" />
+        <activity android:name=".activity.Part2" />
+        <activity android:name=".activity.Part3"></activity>
     </application>
 
 </manifest>

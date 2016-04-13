@@ -13,8 +13,8 @@ import ltdd.it.tdt.edu.vn.toeic.object.Item;
 
 public class AtvLuyenThi extends AppCompatActivity {
     private final int SRC = R.drawable.photos;
-    private final int LISTEN = 0;
-    private final int READ = 1;
+    public static final int LISTEN = 0;
+    public static final int READ = 1;
     private ListView lstListen;
     private ListView lstRead;
     private Item[][] items = new Item[2][];
@@ -22,12 +22,14 @@ public class AtvLuyenThi extends AppCompatActivity {
     private CustomLayoutListView layoutListen;
 
     private void initItem() {
-        items[LISTEN] = new Item[]{new Item(SRC, "Photos"),
+        items[LISTEN] = new Item[]{
+                new Item(SRC, "Photos"),
                 new Item(SRC, "Question - Response"),
                 new Item(SRC, "Short Conversations"),
                 new Item(SRC, "Short Talks")
         };
-        items[READ] = new Item[]{new Item(SRC, "Incomplete Sentences"),
+        items[READ] = new Item[]{
+                new Item(SRC, "Incomplete Sentences"),
                 new Item(SRC, "Text Completion"),
                 new Item(SRC, "Short Conversations"),
                 new Item(SRC, "Reading Comprehension")

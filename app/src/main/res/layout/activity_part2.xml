@@ -4,12 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activity.AvtPhotos">
-
+    tools:context="ltdd.it.tdt.edu.vn.toeic.activity.Part2">
     <MediaController
         android:id="@+id/media_photos"
         android:layout_width="match_parent"
@@ -29,10 +24,6 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,20 +58,12 @@
             android:background="@drawable/circlebutton"
             android:text="C" />
 
-        <Button
-            android:id="@+id/btnD"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/circlebutton"
-            android:text="D" />
     </LinearLayout>
 
     <fragment
-        android:id="@+id/frgHintAnswer"
+        android:id="@+id/frgHintAnswerPart2"
         android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/simple_list_item_1"></fragment>
+        tools:layout="@layout/abc_action_mode_bar"></fragment>
 </LinearLayout>
