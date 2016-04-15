@@ -10,6 +10,6 @@ public class AvtPhotos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avt_photos);
+        setContentView(R.layout.activity_part1);
     }
 }
