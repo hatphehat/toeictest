@@ -25,22 +25,4 @@
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
 
-       <fragment
-        android:id="@+id/frgHintAnswerPart3-1"
-        android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/abc_action_mode_bar"></fragment>
-       <fragment
-        android:id="@+id/frgHintAnswerPart3-2"
-        android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/abc_action_mode_bar"></fragment>
-       <fragment
-        android:id="@+id/frgHintAnswerPart3-3"
-        android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/abc_action_mode_bar"></fragment>
-</LinearLayout>
+  </LinearLayout>

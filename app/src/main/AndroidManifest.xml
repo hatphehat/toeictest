@@ -20,12 +20,10 @@
             android:name=".activity.AtvLuyenThi"
             android:label="@string/title_activity_de_thi" />
         <activity android:name=".activity.AtvListDeThi" />
-        <activity android:name=".activity.AvtPhotos" />
+        <activity android:name=".activity.Part1" />
         <activity android:name=".activity.Part2" />
         <activity android:name=".activity.Part3"></activity>
-        <provider android:name=".database.QuestionContentProvider"
-            android:authorities="vn.edu.tdt.it.toeic">
-        </provider>
+
         <meta-data android:name="AA_DB_NAME" android:value="Pickrand.db" />
         <meta-data android:name="AA_DB_VERSION" android:value="5" />
     </application>

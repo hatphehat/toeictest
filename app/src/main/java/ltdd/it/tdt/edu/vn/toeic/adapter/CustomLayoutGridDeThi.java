@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
-import ltdd.it.tdt.edu.vn.toeic.object.DeThi;
+import ltdd.it.tdt.edu.vn.toeic.object.ARC;
 
 /**
  * Created by hph on 4/9/2016.
@@ -19,8 +19,8 @@ import ltdd.it.tdt.edu.vn.toeic.object.DeThi;
 public class CustomLayoutGridDeThi extends ArrayAdapter {
     Context context;
     int resource;
-    ArrayList<DeThi> items;
-    public CustomLayoutGridDeThi(Context context, int resource, ArrayList<DeThi> objects) {
+    ArrayList<ARC> items;
+    public CustomLayoutGridDeThi(Context context, int resource, ArrayList<ARC> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;

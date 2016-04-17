@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.adapter.CustomLayoutGridDeThi;
-import ltdd.it.tdt.edu.vn.toeic.object.DeThi;
+import ltdd.it.tdt.edu.vn.toeic.object.ARC;
 
 public class AtvListDeThi extends  AppCompatActivity implements AdapterView.OnItemClickListener{
-    ArrayList<DeThi> deThis;
+    ArrayList<ARC> deThis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class AtvListDeThi extends  AppCompatActivity implements AdapterView.OnIt
         if(callerIntent != null) {
             Bundle bundle = callerIntent.getBundleExtra("BundleDeThiPhotos");
             if(bundle != null) {
-                deThis = (ArrayList<DeThi>) bundle.getSerializable("dethi");
+                deThis = (ArrayList<ARC>) bundle.getSerializable("dethi");
                 if (deThis != null && !deThis.isEmpty()) {
                     GridView gridView = (GridView) findViewById(R.id.gridViewDeThi);
                     CustomLayoutGridDeThi customLayoutGridDeThi = new CustomLayoutGridDeThi(this, R.layout.custom_grid, deThis);
