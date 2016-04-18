@@ -3,14 +3,15 @@ package ltdd.it.tdt.edu.vn.toeic.object;
 import java.io.Serializable;
 import java.util.List;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import com.j256.ormlite.field.ForeignCollectionField;
 
 /**
  * Created by hph on 4/9/2016.
  */
 public class ARC implements Serializable {
-    public static final int NUM_PART = 6;
+    public static final int NUM_PART = 8;
     public static final int PART_1 = 0;
     public static final int PART_2 = 1;
     public static final int PART_3 = 2;
@@ -19,106 +20,54 @@ public class ARC implements Serializable {
     public static final int PART_6 = 5;
     public static final int PART_7 = 6;
     public static final int PART_8 = 7;
+
     @DatabaseField(generatedId = true)
     private int id;
+    @ForeignCollectionField(foreignFieldName = "part1")
+    private ForeignCollection<ObjQuestion> lstPart1;
+    @ForeignCollectionField(foreignFieldName = "part2")
+    private ForeignCollection<ObjQuestion> lstPart2;
+    @ForeignCollectionField(foreignFieldName = "part3")
+    private ForeignCollection<ObjQuestion> lstPart3;
+    @ForeignCollectionField(foreignFieldName = "part4")
+    private ForeignCollection<ObjQuestion> lstPart4;
+    @ForeignCollectionField(foreignFieldName = "part5")
+    private ForeignCollection<ObjQuestion> lstPart5;
+    @ForeignCollectionField(foreignFieldName = "part6")
+    private ForeignCollection<ObjQuestion> lstPart6;
+    @ForeignCollectionField(foreignFieldName = "part7")
+    private ForeignCollection<ObjQuestion> lstPart7;
+    @ForeignCollectionField(foreignFieldName = "part8")
+    private ForeignCollection<ObjQuestion> lstPart8;
     @DatabaseField
-    private List<ObjQuestion> lstPart1;
-    private List<ObjQuestion> lstPart2;
-    private List<ObjQuestion> lstPart3;
-    private List<ObjQuestion> lstPart4;
-    private List<ObjQuestion> lstPart5;
-    private List<ObjQuestion> lstPart6;
-    private List<ObjQuestion> lstPart7;
-    private List<ObjQuestion> lstPart8;
-    @DatabaseField
-    private String text;
+    private String name;
     private int imgResource;
 
     public ARC() {
     }
 
-    public void setLstPart1(List<ObjQuestion> lstPart1) {
-        this.lstPart1 = lstPart1;
+    public int getId() {
+        return id;
     }
 
-    public List<ObjQuestion> getLstPart2() {
-        return lstPart2;
-    }
-
-    public void setLstPart2(List<ObjQuestion> lstPart2) {
-        this.lstPart2 = lstPart2;
-    }
-
-    public List<ObjQuestion> getLstPart3() {
-        return lstPart3;
-    }
-
-    public void setLstPart3(List<ObjQuestion> lstPart3) {
-        this.lstPart3 = lstPart3;
-    }
-
-    public List<ObjQuestion> getLstPart4() {
-        return lstPart4;
-    }
-
-    public void setLstPart4(List<ObjQuestion> lstPart4) {
-        this.lstPart4 = lstPart4;
-    }
-
-    public List<ObjQuestion> getLstPart5() {
-        return lstPart5;
-    }
-
-    public void setLstPart5(List<ObjQuestion> lstPart5) {
-        this.lstPart5 = lstPart5;
-    }
-
-    public List<ObjQuestion> getLstPart6() {
-        return lstPart6;
-    }
-
-    public void setLstPart6(List<ObjQuestion> lstPart6) {
-        this.lstPart6 = lstPart6;
-    }
-
-    public List<ObjQuestion> getLstPart7() {
-        return lstPart7;
-    }
-
-    public void setLstPart7(List<ObjQuestion> lstPart7) {
-        this.lstPart7 = lstPart7;
-    }
-
-    public List<ObjQuestion> getLstPart8() {
-        return lstPart8;
-    }
-
-    public void setLstPart8(List<ObjQuestion> lstPart8) {
-        this.lstPart8 = lstPart8;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setImgResource(int imgResource) {
-        this.imgResource = imgResource;
-    }
-
-    public List<ObjQuestion> getLstPart1() {
+    public ForeignCollection<ObjQuestion> getLstPart1() {
         return lstPart1;
     }
 
-    public String getText() {
-        return text;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getImgResource() {
         return imgResource;
     }
 
-    public ARC(String text, int imgResource) {
-        this.text = text;
+    public void setImgResource(int imgResource) {
         this.imgResource = imgResource;
     }
 }

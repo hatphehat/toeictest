@@ -143,7 +143,8 @@ public class AtvLuyenThi extends AppCompatActivity {
                     switch (position){
                         case 0:
                             Intent intent = new Intent(AtvLuyenThi.this,AvtListDeThi.class);
-                            intent.putExtra(BundleConstant.MODE,ARC.PART_1);
+                            Bundle bundle = new Bundle();
+                            bundle.putInt(BundleConstant.MODE,ARC.PART_1);
                             startActivity(intent);
                             break;
                         case 1:

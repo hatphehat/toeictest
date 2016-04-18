@@ -16,30 +16,4 @@ import ltdd.it.tdt.edu.vn.toeic.object.ARC;
 /**
  * Created by hph on 4/9/2016.
  */
-public class CustomLayoutGridDeThi extends ArrayAdapter {
-    Context context;
-    int resource;
-    ArrayList<ARC> items;
-    public CustomLayoutGridDeThi(Context context, int resource, ArrayList<ARC> objects) {
-        super(context, resource, objects);
-        this.context = context;
-        this.resource = resource;
-        this.items = objects;
-    }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View row = LayoutInflater.from(context).inflate(resource,null);
-        ImageView imageView = (ImageView) row.findViewById(R.id.imgGridDeThi);
-        TextView textView = (TextView) row.findViewById(R.id.txtGridDeThi);
-        textView.setText(items.get(position).getText());
-        imageView.setImageResource(items.get(position).getImgResource());
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                
-            }
-        });
-        return row;
-    }
-}

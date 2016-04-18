@@ -5,43 +5,47 @@ import android.support.annotation.NonNull;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
+
 /**
  * Created by hph on 4/17/2016.
  */
-public class ObjQuestion {
+public class ObjQuestion implements Serializable {
+    private static final String ARC_ID_FIELD_NAME = "arc_id";
     public static int NUM_ANSWER = 4;
     public static int ANSWER_A = 0;
     public static int ANSWER_B = 1;
     public static int ANSWER_C= 2;
     public static int ANSWER_D= 3;
     @DatabaseField(id = true)
-    protected String id;
+    private int id;
+    @DatabaseField(foreign = true, foreignAutoRefresh = true,columnName = ARC_ID_FIELD_NAME)
+    private ARC arc;
     @DatabaseField
-    protected String question;
+    private String question;
     @DatabaseField
-    protected String[] answer;
+    private String answerA;
     @DatabaseField
-    protected int type;
+    private String answerB;
     @DatabaseField
-    protected int correctAnswer;
+    private String answerC;
+    @DatabaseField
+    private String answerD;
+    @DatabaseField
+    private int type;
+    @DatabaseField
+    private int correctAnswer;
 
-    public ObjQuestion(@NonNull String question, @NonNull String[] answer, @NonNull int correctAnswer, @NonNull int type) {
+
+    public ObjQuestion(ARC arc, String question, String answerA, String answerB, String answerC, String answerD, int type, int correctAnswer) {
+        this.arc = arc;
         this.question = question;
-        this.answer = answer;
+        this.answerA = answerA;
+        this.answerB = answerB;
+        this.answerC = answerC;
+        this.answerD = answerD;
+        this.type = type;
         this.correctAnswer = correctAnswer;
-        this.type = type;
-    }
-
-    public ObjQuestion(@NonNull String question, @NonNull String A, @NonNull String B, @NonNull String C, String D, @NonNull int correctAnswer, @NonNull int type) {
-        if(type == ARC.PART_2) {
-            answer = new String[NUM_ANSWER - 1];
-            answer[ANSWER_A] = A; answer[ANSWER_B]=B;answer[ANSWER_C]=C;
-        }else{
-            answer = new String[NUM_ANSWER];
-            answer[ANSWER_A] = A; answer[ANSWER_B]=B;answer[ANSWER_C]=C;answer[ANSWER_D]=D;
-        }
-        this.question=question;this.correctAnswer=correctAnswer;
-        this.type = type;
     }
 
     public void setCorrectAnswer(int correctAnswer) {
@@ -60,11 +64,51 @@ public class ObjQuestion {
         return question;
     }
 
-    public String[] getAnswer() {
-        return answer;
+    public ARC getArc() {
+        return arc;
     }
 
-    public void setAnswer(String[] answer) {
-        this.answer = answer;
+    public void setArc(ARC arc) {
+        this.arc = arc;
+    }
+
+    public String getAnswerA() {
+        return answerA;
+    }
+
+    public void setAnswerA(String answerA) {
+        this.answerA = answerA;
+    }
+
+    public String getAnswerB() {
+        return answerB;
+    }
+
+    public void setAnswerB(String answerB) {
+        this.answerB = answerB;
+    }
+
+    public String getAnswerC() {
+        return answerC;
+    }
+
+    public void setAnswerC(String answerC) {
+        this.answerC = answerC;
+    }
+
+    public String getAnswerD() {
+        return answerD;
+    }
+
+    public void setAnswerD(String answerD) {
+        this.answerD = answerD;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

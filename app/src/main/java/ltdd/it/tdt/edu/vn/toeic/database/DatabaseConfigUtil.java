@@ -7,12 +7,13 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import ltdd.it.tdt.edu.vn.toeic.object.ARC;
+import ltdd.it.tdt.edu.vn.toeic.object.ObjQuestion;
 
 /**
  * Created by hph on 4/17/2016.
  */
 public class DatabaseConfigUtil extends OrmLiteConfigUtil {
-    private static final Class<?>[] classes = new Class[] {ARC.class};
+    private static final Class<?>[] classes = new Class[] {ARC.class, ObjQuestion.class};
     public static void main(String[] args) throws SQLException, IOException {
 
         // Provide the name of .txt file which you have already created and kept in res/raw directory

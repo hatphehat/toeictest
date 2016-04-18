@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="ltdd.it.tdt.edu.vn.toeic.activity.Part2">
-    <MediaController
-        android:id="@+id/media_photos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -65,5 +60,5 @@
         android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/abc_action_mode_bar"></fragment>
+        tools:layout="@layout/abc_action_mode_bar"/>
 </LinearLayout>
