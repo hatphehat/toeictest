@@ -10,26 +10,37 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.object.ARC;
+import ltdd.it.tdt.edu.vn.toeic.object.ObjQuestion;
 
 /**
  * Created by hph on 4/17/2016.
  */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-    private static final String DATABASE_NAME = "toeic.db";
+    private static final String DATABASE_NAME = "toeic1.db";
     private static final int DATABASE_VERSION = 1;
     private Dao<ARC,Integer> arcDAO;
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION,R.raw.ormlite_config);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try {
             TableUtils.createTable(connectionSource,ARC.class);
+            ObjQuestion objQuestion = new ObjQuestion(
+                    "What your name",
+                    "A","B","C","D",ObjQuestion.ANSWER_A,ARC.PART_1
+            );
+            ARC arc = new ARC();
+            arc.setText("Đề 2");
+            arc.setLstPart1(new ArrayList<ObjQuestion>(Arrays.asList(objQuestion)));
+            arcDAO.create(arc);
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Unable to create datbases", e);
         }

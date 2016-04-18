@@ -14,15 +14,18 @@
         android:id="@+id/frgMediaPart1"
         android:name="ltdd.it.tdt.edu.vn.toeic.fragment.MediaPlayer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_media_player" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
+            android:id="@+id/btnBackPart1"
             android:src="@drawable/ic_launcher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/btnFowardPart1"
             android:src="@drawable/ic_launcher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,6 +33,7 @@
             android:layout_alignParentEnd="true" />
     </RelativeLayout>
     <ImageView
+        android:id="@+id/imgPart1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_launcher" />
@@ -41,7 +45,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnA"
+            android:id="@+id/btnA1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -50,7 +54,7 @@
             android:text="A" />
 
         <Button
-            android:id="@+id/btnB"
+            android:id="@+id/btnB1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -59,7 +63,7 @@
             android:text="B" />
 
         <Button
-            android:id="@+id/btnC"
+            android:id="@+id/btnC1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -68,7 +72,7 @@
             android:text="C" />
 
         <Button
-            android:id="@+id/btnD"
+            android:id="@+id/btnD1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -77,10 +81,8 @@
             android:text="D" />
     </LinearLayout>
 
-    <fragment
-        android:id="@+id/frgHintAnswer"
-        android:name="ltdd.it.tdt.edu.vn.toeic.fragment.FrgHintAnswer"
+    <ListView
+        android:id="@+id/lstAnswerKeyPart1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/simple_list_item_1"></fragment>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

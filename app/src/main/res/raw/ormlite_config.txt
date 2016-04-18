@@ -1,0 +1,17 @@
+#
+# generated on 2016/04/17 08:50:56
+#
+# --table-start--
+dataClass=ltdd.it.tdt.edu.vn.toeic.object.ARC
+tableName=arc
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=text
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

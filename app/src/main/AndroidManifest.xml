@@ -19,7 +19,7 @@
         <activity
             android:name=".activity.AtvLuyenThi"
             android:label="@string/title_activity_de_thi" />
-        <activity android:name=".activity.AtvListDeThi" />
+        <activity android:name=".activity.AvtListDeThi" />
         <activity android:name=".activity.Part1" />
         <activity android:name=".activity.Part2" />
         <activity android:name=".activity.Part3"></activity>

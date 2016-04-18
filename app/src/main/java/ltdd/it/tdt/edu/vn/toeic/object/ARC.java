@@ -10,15 +10,18 @@ import com.j256.ormlite.table.DatabaseTable;
  * Created by hph on 4/9/2016.
  */
 public class ARC implements Serializable {
-    public static int NUM_PART = 6;
-    public static int PART_1 = 0;
-    public static int PART_2 = 1;
-    public static int PART_3 = 2;
-    public static int PART_4 = 3;
-    public static int PART_5 = 4;
-    public static int PART_6 = 5;
+    public static final int NUM_PART = 6;
+    public static final int PART_1 = 0;
+    public static final int PART_2 = 1;
+    public static final int PART_3 = 2;
+    public static final int PART_4 = 3;
+    public static final int PART_5 = 4;
+    public static final int PART_6 = 5;
+    public static final int PART_7 = 6;
+    public static final int PART_8 = 7;
     @DatabaseField(generatedId = true)
     private int id;
+    @DatabaseField
     private List<ObjQuestion> lstPart1;
     private List<ObjQuestion> lstPart2;
     private List<ObjQuestion> lstPart3;
