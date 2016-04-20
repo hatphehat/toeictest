@@ -12,11 +12,10 @@ import java.util.List;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.database.BundleConstant;
-import ltdd.it.tdt.edu.vn.toeic.object.ObjQuestion;
 
 public class Part1 extends AppCompatActivity {
     android.app.Fragment frgMedia = null;
-    Button[] btnAnswer = new Button[ObjQuestion.NUM_ANSWER];
+//    Button[] btnAnswer = new Button[Question.NUM_ANSWER];
     ImageView imageView = null;
     Button[] btnAction = new Button[2];
     ListView listView = null;
@@ -24,15 +23,15 @@ public class Part1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_part1);
-        try {
+       /* try {
             Bundle bundle = new Bundle();
-            List<ObjQuestion> objQuestionList = (List<ObjQuestion>) bundle.getSerializable(BundleConstant.PART_1);
+            List<Question> objQuestionList = (List<Question>) bundle.getSerializable(BundleConstant.PART_1);
             if(objQuestionList == null)
                 return;
-            btnAnswer[ObjQuestion.ANSWER_A] = (Button) findViewById(R.id.btnA1);
-            btnAnswer[ObjQuestion.ANSWER_B] = (Button) findViewById(R.id.btnB1);
-            btnAnswer[ObjQuestion.ANSWER_C] = (Button) findViewById(R.id.btnC1);
-            btnAnswer[ObjQuestion.ANSWER_D] = (Button) findViewById(R.id.btnD1);
+            btnAnswer[Question.ANSWER_A] = (Button) findViewById(R.id.btnA1);
+            btnAnswer[Question.ANSWER_B] = (Button) findViewById(R.id.btnB1);
+            btnAnswer[Question.ANSWER_C] = (Button) findViewById(R.id.btnC1);
+            btnAnswer[Question.ANSWER_D] = (Button) findViewById(R.id.btnD1);
             frgMedia = getFragmentManager().findFragmentById(R.id.frgMediaPart1);
             imageView = (ImageView) findViewById(R.id.imgPart1);
             btnAction[0] = (Button) findViewById(R.id.btnBackPart1);
@@ -48,7 +47,7 @@ public class Part1 extends AppCompatActivity {
             Toast.makeText(this,objQuestionList.get(0).getCorrectAnswer(),Toast.LENGTH_LONG).show();
         }catch (Exception e){
 
-        }
+        }*/
 
     }
 }

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
+import ltdd.it.tdt.edu.vn.toeic.object.MCQ;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDeThi = (Button) findViewById(R.id.btnDeThi);
         btnDeThi.setOnClickListener(this);
         btnLuyenThi.setOnClickListener(this);
+        MCQ mcq = new MCQ();
+        savedInstanceState.putSerializable("MCQ",mcq);
     }
 
 
@@ -53,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent;
         if (v.equals(btnLuyenThi)) {
             intent = new Intent(MainActivity.this, AtvLuyenThi.class);
+            startActivity(intent);
+        }
+        if(v.equals(btnDeThi)){
+            intent = new Intent(MainActivity.this,AvtListDeThi.class);
             startActivity(intent);
         }
     }

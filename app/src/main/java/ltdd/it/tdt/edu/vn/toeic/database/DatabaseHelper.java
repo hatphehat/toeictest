@@ -6,53 +6,49 @@ import android.util.Log;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
-import ltdd.it.tdt.edu.vn.toeic.object.ARC;
-import ltdd.it.tdt.edu.vn.toeic.object.ObjQuestion;
+import ltdd.it.tdt.edu.vn.toeic.object.MCQ;
+import ltdd.it.tdt.edu.vn.toeic.object.Question;
 
 /**
  * Created by hph on 4/17/2016.
  */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-    private static final String DATABASE_NAME = "toeic.db";
-    private static final int DATABASE_VERSION = 2;
-    private Dao<ARC,Integer> arcDAO;
-    private Dao<ObjQuestion,Integer> questionDAO;
+    private static final String DATABASE_NAME = "hph";
+    private static final int DATABASE_VERSION = 3;
+    private Dao<MCQ,Integer> arcDAO;
+    private Dao<Question,Integer> questionDAO;
+//    private Dao<ARCDetail,Integer> arcDetailIntegerDao;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION,R.raw.ormlite_config);
+//        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try {
-            arcDAO = DaoManager.createDao(connectionSource,ARC.class);
-            questionDAO= DaoManager.createDao(connectionSource,ObjQuestion.class);
-            TableUtils.createTable(connectionSource,ARC.class);
-            TableUtils.createTable(connectionSource,ObjQuestion.class);
+            TableUtils.createTable(connectionSource,MCQ.class);
+            TableUtils.createTable(connectionSource,Question.class);
+//            TableUtils.createTable(connectionSource,ARCDetail.class);
 
-            ARC arc = new ARC();
-            arc.setName("Đề 1");
-            arcDAO.create(arc);
+            MCQ arc = new MCQ("Đề 1");
+            getArcDAO().create(arc);
 
-            ObjQuestion objQuestion = new ObjQuestion(
-                    arc,
+            Question objQuestion = new Question(
+                    null,
                     "What your name",
                     "A","B","C","D",
-                    ObjQuestion.ANSWER_A,
-                    ARC.PART_1
+                    Question.ANSWER_A,
+                    MCQ.PART_1
             );
-            questionDAO.create(objQuestion);
+//            getQuestionDAO().create(objQuestion);
 
-            ARC current = arcDAO.queryForId(arc.getId());
-            ForeignCollection<ObjQuestion> objQuestions = current.getLstPart1();
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Unable to create datbases", e);
         }
@@ -66,7 +62,9 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             //automatically. Developer needs to handle the upgrade logic here, i.e. create a new table or a new column to an existing table, take the backups of the
             // existing database etc.
 
-            TableUtils.dropTable(connectionSource, ARC.class, true);
+            TableUtils.dropTable(connectionSource, MCQ.class, true);
+            TableUtils.dropTable(connectionSource, Question.class, true);
+//            TableUtils.dropTable(connectionSource, ARCDetail.class, true);
             onCreate(sqLiteDatabase, connectionSource);
 
         } catch (SQLException e) {
@@ -76,9 +74,23 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     }
 
-    public Dao<ARC, Integer> getArcDAO() throws SQLException {
+    public Dao<MCQ, Integer> getArcDAO() throws SQLException {
         if(arcDAO == null)
-            arcDAO = getDao(ARC.class);
+            arcDAO = getDao(MCQ.class);
         return arcDAO;
     }
+
+   /* public Dao<ARCDetail, Integer> getArcDetailIntegerDao() throws SQLException {
+        if(arcDetailIntegerDao == null)
+            arcDetailIntegerDao = getDao(ARCDetail.class);
+        return arcDetailIntegerDao;
+    }*/
+
+    public Dao<Question, Integer> getQuestionDAO() throws SQLException {
+        if(questionDAO == null)
+            questionDAO = getDao(Question.class);
+        return questionDAO;
+    }
+
+
 }

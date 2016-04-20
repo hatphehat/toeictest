@@ -1,5 +1,5 @@
 #
-# generated on 2016/04/18 02:07:08
+# generated on 2016/04/18 07:26:37
 #
 # --table-start--
 dataClass=ltdd.it.tdt.edu.vn.toeic.object.ARC
@@ -7,47 +7,13 @@ tableName=arc
 # --table-fields-start--
 # --field-start--
 fieldName=id
+columnName=arc_id
 generatedId=true
 # --field-end--
 # --field-start--
 fieldName=lstPart1
 foreignCollection=true
 foreignCollectionForeignFieldName=part1
-# --field-end--
-# --field-start--
-fieldName=lstPart2
-foreignCollection=true
-foreignCollectionForeignFieldName=part2
-# --field-end--
-# --field-start--
-fieldName=lstPart3
-foreignCollection=true
-foreignCollectionForeignFieldName=part3
-# --field-end--
-# --field-start--
-fieldName=lstPart4
-foreignCollection=true
-foreignCollectionForeignFieldName=part4
-# --field-end--
-# --field-start--
-fieldName=lstPart5
-foreignCollection=true
-foreignCollectionForeignFieldName=part5
-# --field-end--
-# --field-start--
-fieldName=lstPart6
-foreignCollection=true
-foreignCollectionForeignFieldName=part6
-# --field-end--
-# --field-start--
-fieldName=lstPart7
-foreignCollection=true
-foreignCollectionForeignFieldName=part7
-# --field-end--
-# --field-start--
-fieldName=lstPart8
-foreignCollection=true
-foreignCollectionForeignFieldName=part8
 # --field-end--
 # --field-start--
 fieldName=name
@@ -57,11 +23,11 @@ fieldName=name
 #################################
 # --table-start--
 dataClass=ltdd.it.tdt.edu.vn.toeic.object.ObjQuestion
-tableName=objquestion
+tableName=questions
 # --table-fields-start--
 # --field-start--
 fieldName=id
-id=true
+generatedId=true
 # --field-end--
 # --field-start--
 fieldName=arc

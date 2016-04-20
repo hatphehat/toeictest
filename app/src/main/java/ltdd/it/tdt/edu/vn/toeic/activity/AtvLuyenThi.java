@@ -20,8 +20,6 @@ import java.util.List;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.database.BundleConstant;
-import ltdd.it.tdt.edu.vn.toeic.database.DatabaseHelper;
-import ltdd.it.tdt.edu.vn.toeic.object.ARC;
 
 
 public class AtvLuyenThi extends AppCompatActivity {
@@ -33,18 +31,11 @@ public class AtvLuyenThi extends AppCompatActivity {
     private ListView lstRead = null;
 
     private Item[][] items = new Item[2][];
-    private List<ARC> lstARC = null;
+//    private List<MCQ> lstARC = null;
 
     private CustomLayoutListView layoutRead;
     private CustomLayoutListView layoutListen;
 
-    private DatabaseHelper databaseHelper = null;
-    private DatabaseHelper getHelper() {
-        if (databaseHelper == null) {
-            databaseHelper = OpenHelperManager.getHelper(this,DatabaseHelper.class);
-        }
-        return databaseHelper;
-    }
 
     private void initItem() {
         items[LISTEN] = new Item[]{
@@ -112,10 +103,6 @@ public class AtvLuyenThi extends AppCompatActivity {
 		/*
 		 * You'll need this in your class to release the helper when done.
 		 */
-        if (databaseHelper != null) {
-            OpenHelperManager.releaseHelper();
-            databaseHelper = null;
-        }
     }
 
     class CustomLayoutListView extends ArrayAdapter {
@@ -144,7 +131,7 @@ public class AtvLuyenThi extends AppCompatActivity {
                         case 0:
                             Intent intent = new Intent(AtvLuyenThi.this,AvtListDeThi.class);
                             Bundle bundle = new Bundle();
-                            bundle.putInt(BundleConstant.MODE,ARC.PART_1);
+//                            bundle.putInt(BundleConstant.MODE,MCQ.PART_1);
                             startActivity(intent);
                             break;
                         case 1:
