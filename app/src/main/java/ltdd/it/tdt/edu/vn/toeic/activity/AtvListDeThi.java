@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,19 +12,13 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.j256.ormlite.android.apptools.OpenHelperManager;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import ltdd.it.tdt.edu.vn.toeic.R;
 import ltdd.it.tdt.edu.vn.toeic.database.BundleConstant;
-import ltdd.it.tdt.edu.vn.toeic.database.DatabaseHelper;
 import ltdd.it.tdt.edu.vn.toeic.object.MCQ;
 
-public class AvtListDeThi extends  AppCompatActivity {
+public class AtvListDeThi extends  AppCompatActivity {
     ArrayList<MCQ> deThis;
     int mode = -1;
     /*private DatabaseHelper databaseHelper = null;
@@ -39,12 +32,14 @@ public class AvtListDeThi extends  AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_de_thi);
-        deThis = new ArrayList<MCQ>();
-        deThis.add((MCQ) savedInstanceState.getSerializable("MCQ"));
+        Bundle bundle = getIntent().getBundleExtra("DETHIS");
+        deThis = new ArrayList<>();
+        MCQ mcq = (MCQ) bundle.getSerializable("MCQ");
+        deThis.add(mcq);
         GridView gridView = (GridView) findViewById(R.id.gridViewDeThi);
         CustomLayoutGridDeThi customLayoutGridDeThi = new CustomLayoutGridDeThi(this, R.layout.custom_grid, deThis);
         gridView.setAdapter(customLayoutGridDeThi);
-        Bundle bundle = new Bundle();
+
         mode = bundle.getInt(BundleConstant.MODE);
     }
 
@@ -71,7 +66,7 @@ public class AvtListDeThi extends  AppCompatActivity {
                 public void onClick(View v) {
                     switch (mode){
                         case MCQ.PART_1:
-                            Intent intent = new Intent(AvtListDeThi.this,Part1.class);
+                            Intent intent = new Intent(AtvListDeThi.this,Part1.class);
 //                            Bundle bundle = new Bundle();
 //                            bundle.putSerializable(BundleConstant.PART_1, (Serializable) deThis.get(position).getLstPart1());
                             startActivity(intent);
@@ -81,6 +76,9 @@ public class AvtListDeThi extends  AppCompatActivity {
                             break;case MCQ.PART_5:
                             break;case MCQ.PART_6:
                             break;case MCQ.PART_7:
+                            break;
+                        //chế độ đề thi
+                        default:
                             break;
                     }
                 }

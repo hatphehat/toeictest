@@ -14,12 +14,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.j256.ormlite.android.apptools.OpenHelperManager;
-
-import java.util.List;
-
 import ltdd.it.tdt.edu.vn.toeic.R;
-import ltdd.it.tdt.edu.vn.toeic.database.BundleConstant;
 
 
 public class AtvLuyenThi extends AppCompatActivity {
@@ -129,7 +124,7 @@ public class AtvLuyenThi extends AppCompatActivity {
                     if(item[0].type == Item.LISTEN)
                     switch (position){
                         case 0:
-                            Intent intent = new Intent(AtvLuyenThi.this,AvtListDeThi.class);
+                            Intent intent = new Intent(AtvLuyenThi.this,AtvListDeThi.class);
                             Bundle bundle = new Bundle();
 //                            bundle.putInt(BundleConstant.MODE,MCQ.PART_1);
                             startActivity(intent);
